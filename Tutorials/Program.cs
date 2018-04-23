@@ -1,4 +1,7 @@
-﻿/*using System;
+﻿/*
+ * Updated for barch
+ * 
+ * using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -59,7 +62,7 @@ class Solution
 }*/
 
 
-using System;
+/*using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -67,9 +70,9 @@ using System.Linq;
 class Solution
 {
 
-    /*
-     * Complete the plusMinus function below.
-     */
+    
+     // Complete the plusMinus function below.
+     
     static void plusMinus(int[] arr)
     {
         int postiveEntries = 0;
@@ -108,5 +111,57 @@ class Solution
         int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp))
         ;
         plusMinus(arr);
+    }
+}*/
+
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+class Solution
+{
+
+    /*
+     * Complete the miniMaxSum function below.
+     */
+    static void miniMaxSum(int[] arr)
+    {
+        Int64 minSum = 0;
+        Int64 maxSum = 0;
+        int count = 4;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Int64 sum = arr[i];
+            int secondIndx = i + 1;
+            for (int j =0; j < count; j++)
+            {
+                secondIndx += j;
+                int indx = i + secondIndx;
+                if (indx > arr.Length - 1)
+                {
+                    indx = arr.Length - indx;
+                }
+                sum += arr[indx];
+            }
+            if(i==0)
+            {
+                minSum = maxSum = sum;
+            }
+            if (sum < minSum)
+                minSum = sum;
+            if (sum > maxSum)
+                maxSum = sum;
+        }
+        Console.WriteLine("{0}  {1}", minSum, maxSum);
+
+    }
+
+    static void Main(string[] args)
+    {
+        int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp))
+        ;
+        miniMaxSum(arr);
     }
 }
