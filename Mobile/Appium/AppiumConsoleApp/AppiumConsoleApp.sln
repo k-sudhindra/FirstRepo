@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppiumConsoleApp", "AppiumConsoleApp\AppiumConsoleApp.csproj", "{277AA1C5-7B1C-4806-8E74-3C4F996A4431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppiumTestProject", "NUnitProject\AppiumTestProject.csproj", "{B89A58D5-D41B-4C9B-8BBA-DCF074CCD830}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{277AA1C5-7B1C-4806-8E74-3C4F996A4431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{277AA1C5-7B1C-4806-8E74-3C4F996A4431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{277AA1C5-7B1C-4806-8E74-3C4F996A4431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{277AA1C5-7B1C-4806-8E74-3C4F996A4431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89A58D5-D41B-4C9B-8BBA-DCF074CCD830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89A58D5-D41B-4C9B-8BBA-DCF074CCD830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89A58D5-D41B-4C9B-8BBA-DCF074CCD830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89A58D5-D41B-4C9B-8BBA-DCF074CCD830}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12A708F7-5158-4323-B5C0-AB4BE77849E3}
+	EndGlobalSection
+EndGlobal
