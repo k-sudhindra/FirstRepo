@@ -114,7 +114,6 @@ class Solution
     }
 }*/
 
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -124,44 +123,42 @@ class Solution
 {
 
     /*
-     * Complete the miniMaxSum function below.
+     * Complete the timeConversion function below.
      */
-    static void miniMaxSum(int[] arr)
+    static string timeConversion(string s)
     {
-        Int64 minSum = 0;
-        Int64 maxSum = 0;
-        int count = 4;
-        for (int i = 0; i < arr.Length; i++)
+        /*
+         * Write your code here.
+         */
+        string hrVal = s.Substring(0, s.IndexOf(':'));
+        string meridianVal = s.Substring(s.Length - 2);
+        int hour = 0;
+        if (meridianVal.Equals("PM", StringComparison.InvariantCultureIgnoreCase))
         {
-            Int64 sum = arr[i];
-            int secondIndx = i + 1;
-            for (int j =0; j < count; j++)
-            {
-                secondIndx += j;
-                int indx = i + secondIndx;
-                if (indx > arr.Length - 1)
-                {
-                    indx = arr.Length - indx;
-                }
-                sum += arr[indx];
-            }
-            if(i==0)
-            {
-                minSum = maxSum = sum;
-            }
-            if (sum < minSum)
-                minSum = sum;
-            if (sum > maxSum)
-                maxSum = sum;
+            hour = int.Parse(hrVal);
+            hour += 12;
+
         }
-        Console.WriteLine("{0}  {1}", minSum, maxSum);
+        String newTime = hour.ToString();
+        String remaining = s.Substring(s.IndexOf(':'));
+        newTime = newTime + ":" + remaining;
+
+        
+        return newTime;
 
     }
 
     static void Main(string[] args)
     {
-        int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), arrTemp => Convert.ToInt32(arrTemp))
-        ;
-        miniMaxSum(arr);
+        TextWriter tw = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        string s = Console.ReadLine();
+
+        string result = timeConversion(s);
+
+        tw.WriteLine(result);
+
+        tw.Flush();
+        tw.Close();
     }
 }
