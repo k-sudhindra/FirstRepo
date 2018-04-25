@@ -143,7 +143,7 @@ class Solution
         String remaining = s.Substring(s.IndexOf(':'));
         newTime = newTime + ":" + remaining;
 
-        
+        //x
         return newTime;
 
     }
